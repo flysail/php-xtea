@@ -104,7 +104,7 @@ class XTEA {
          else          //EBC Mode
             $plain[] = $return;
       }
-
+	$output="";
       for($i = 0; $i<count($plain); $i++) {
          $output .= $this->_long2str($plain[$i][0]);
          $output .= $this->_long2str($plain[$i][1]);
