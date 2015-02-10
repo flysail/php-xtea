@@ -158,7 +158,6 @@ class XTEA {
 		);
 
 		//Correct implementation?
-		$correct = true;
 		//Test vectors, see http://www.schneier.com/code/vectors.txt
 		foreach($vectors AS $vector) {
       	$key = $vector[0];
@@ -169,12 +168,9 @@ class XTEA {
 			$return = $xtea->block_encrypt($vector[1][0],$vector[1][1]);
 
 			if((int)$return[0] != (int)$cipher[0] || (int)$return[1] != (int)$cipher[1])
-				$correct = false;
-
+				return false;
 		}
-
-		return $correct;
-
+		return true;
 	}
 
 
